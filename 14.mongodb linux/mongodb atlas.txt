@@ -1,0 +1,12 @@
+mongodb+srv://sachin:<password>@sachin.7rrss.mongodb.net/test
+
+
+connecting throuch compass:
+mongodb+srv://sachin:sachin321@sachin.7rrss.mongodb.net/test  (this was my made custer )
+
+
+
+install libssl1.1
+
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4_amd64.deb
+sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4_amd64.deb

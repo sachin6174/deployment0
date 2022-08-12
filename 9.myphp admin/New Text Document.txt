@@ -1,0 +1,23 @@
+https://www.codewithharry.com/blogpost/install-phpmyadmin-ubuntu-nginx/
+
+remove my phpadmin completely
+sudo apt-get purge phpmyadmin.
+
+sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl
+ dont use any from appace and lighttpd
+
+enter password
+
+sudo mysql
+
+CREATE USER 'sachin'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'RAMAnujan1@#';
+
+GRANT ALL PRIVILEGES ON *.* TO 'sachin'@'localhost' WITH GRANT OPTION;
+
+exit
+
+sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+
+go to ip/phpmyadmin
+
+sudo service nginx restart

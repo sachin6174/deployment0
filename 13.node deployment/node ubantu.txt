@@ -1,0 +1,64 @@
+node deployment 
+https://www.freecodecamp.org/news/how-to-install-node-js-on-ubuntu-and-update-npm-to-the-latest-version/
+https://www.codewithharry.com/blogpost/deploy-nodejs-app-on-ubuntu/
+
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+sudo apt install build-essential
+sudo apt-get install -y nodejs
+node --version && npm --version
+npm install -g npm@latest
+sudo apt-get install -y npm
+
+in home /user
+sudo vi app.js
+
+paste this correctly :
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
+
+npm install express
+
+sudo npm i pm2 -g
+
+pm2 start app.js
+
+sudo apt install nginx
+
+sudo vi /etc/nginx/sites-available/nodeApp
+
+server{
+  server_name 192.168.211.128;
+
+      location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+sudo ln -s /etc/nginx/sites-available/nodeApp /etc/nginx/sites-enabled
+
+cd /etc/nginx/sites-enabled/
+rm default
+sudo npm i pm2 -g
+
+sudo service nginx restart
+
+
+let rn= JSON.parse(reqt("http://192.168.211.131:3000/?%20a=2,b=10"));

@@ -1,0 +1,26 @@
+create user with password (adminuser have access of the databases):
+in mongo shell:
+
+use admin
+
+db.createUser(
+  {
+    user: "myUserAdmin",
+    pwd: "abc123",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+
+make security enable in 
+sudo vim /etc/mongod.conf
+#  security 
+ authorization: 'enabled'
+(other wise it will be accessible through any device without password)
+
+access:
+
+mongodb://myUserAdmin:abc123@192.168.211.128:27017/todoListDB"  in app (with a single db)
+
+in compass with:
+mongodb://myUserAdmin:abc123@192.168.211.128:27017

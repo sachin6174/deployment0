@@ -1,0 +1,39 @@
+https://www.codewithharry.com/blogpost/setup-ubuntu-20-04-server/
+
+there is two way to access and create vm server
+
+with password (eg provided by lenode and created on vm ware )
+with ssh key .pem(for powershell ) and .pak(for putty)
+ and also we have option for no security access
+
+through ssh
+ssh -i "C:\Users\sachin\Downloads\sachin.pem" ubuntu@ec2-3-234-219-66.compute-1.amazonaws.com
+this thing we can get on aws site
+
+through putty
+if: generate private key
+laod key
+make login with username and password as in video
+
+if we have password
+ssh sachin@122.123.141.12
+then enter password
+
+without password 
+direct longin 
+
+and we can also login in ghrome with aws link that is shown on site only
+ssh root@your_server_ip
+ssh root@165.232.177.116
+adduser bunty
+usermod -aG sudo bunty (giving sudo access)
+ufw allow OpenSSH
+ufw enable (enabling firewall no access would be given no respond on othet then ssh )
+sudo su
+exit
+
+
+using nano command 
+ctrl x y enter (save and exit)
+
+//pass

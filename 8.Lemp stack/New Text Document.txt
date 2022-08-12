@@ -1,0 +1,84 @@
+https://www.codewithharry.com/blogpost/lemp-stack-on-ubuntu-20/
+sudo apt update
+
+sudo apt install nginx
+
+sudo ufw app list
+
+//remove apache 
+apt-get remove apache
+sudo apt autoremove
+sudo apt remove apache2.*
+sudo rm -rf /etc/apache2
+apt-get purge apache2
+
+//reload firewall
+ufw reload
+
+//allow enginex for firewall
+sudo ufw allow 'Nginx Full'
+
+sudo apt install mysql-server
+
+sudo mysql
+
+sudo apt install php-fpm php-mysql
+
+
+cd /var/www/html
+vim index.php
+
+
+//paste
+<?php
+echo"helloworld";
+?>
+
+sudo service nginx restart
+
+// adding index.php in default file file
+cd /etc/nginx/sites-available/ 
+
+vi default
+
+at:-
+ root /var/www/html;
+
+        # Add index.php to the list if you are using PHP
+        index index.php index.html index.htm index.nginx-debian.html;
+
+        server_name _;
+
+and uncomment these 
+ location ~ \.php$ { 
+fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+
+
+add:-
+include fastcgi_params;
+fastcgi_index index.php;
+fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+
+
+finally it will look like:
+       location ~ \.php$ {
+                include snippets/fastcgi-php.conf;
+
+        #       # With php-fpm (or other unix sockets):
+                fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+        #       # With php-cgi (or other tcp sockets):
+        #       fastcgi_pass 127.0.0.1:9000;
+                include fastcgi_params;
+                fastcgi_index index.php;
+                fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        }
+
+sudo service nginx restart
+
+Here is a sample index.php site for you to try out:
+
+<?php
+phpinfo();
+?>
+Once you visit the IP of your droplet, you will see a page like this:
+

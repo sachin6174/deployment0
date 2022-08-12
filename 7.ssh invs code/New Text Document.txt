@@ -1,0 +1,17 @@
+extenction:-
+
+remote ssh
+
+remote ssh editing configuration files
+
+press bottom left >< this button in vs code
+
+connet to host
+type sachin@192.168.211.135 enter
+
+download vs on host // it will automatyically done
+
+// also make option on to see all file of pwd in vs for remote server
+
+ to make ftp available in browser:
+python3 -m http.server

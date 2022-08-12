@@ -1,0 +1,20 @@
+https://www.codewithharry.com/blogpost/get-https-ubuntu-using-lets-encrypt/
+
+
+sudo apt install certbot python3-certbot-apache
+
+sudo ufw allow 'Apache Full'
+
+sudo certbot --apache
+
+put mail 
+A
+N
+ if aomain name available then pick from sites
+
+
+redirect :2
+
+sudo systemctl status certbot.timer
+
+sudo certbot renew --dry-run

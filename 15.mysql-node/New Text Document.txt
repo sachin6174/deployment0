@@ -1,0 +1,10 @@
+sudo apt install mysql-server
+sudo systemctl status mysql
+ufw allow mysql
+sudo mysql
+
+CREATE USER 'sachin'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'RAMAnujan1@#';
+// make sure password should be strong
+GRANT ALL PRIVILEGES ON *.* TO 'sachin'@'localhost' WITH GRANT OPTION;
+
+sudo service mysql restart
