@@ -1,8 +1,11 @@
 apt-get remove apache2
 sudo apt autoremove
 sudo apt remove apache2.*
+
+
 chmod +x xampp-linux-x64-8.1.6-0-installer.run
 ./xampp-linux-x64-8.1.6-0-installer.run
+# sudo apt install build-essential 
 sudo chmod 777 /opt/lampp/htdocs
 sudo apt install net-tools -y
 /etc/init.d/mysql stop

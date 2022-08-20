@@ -1,0 +1,18 @@
+// ssl certificate is added to a domain name like sachin.com etc
+// to resolve a ip type 
+nslookup sachinresume.ga   (cmd, erminal etc)
+
+
+to add ssl for free we need to go to https://letsencrypt.org/
+
+help : https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-20-04
+
+apache location of hosted site
+ /var/www/html
+
+
+
+start(apache):
+sudo apt install certbot python3-certbot-apache

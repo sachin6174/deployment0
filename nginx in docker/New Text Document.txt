@@ -1,0 +1,5 @@
+location
+go inside container 
+and go to this route
+
+root@4fcda1762466:/usr/share/nginx/html/

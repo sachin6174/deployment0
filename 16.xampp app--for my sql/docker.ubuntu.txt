@@ -1,5 +1,12 @@
-docker run -it ubuntu /bin/bash
+docker run -d -it alpine   (dont use /bin/bash) 
+docker run -d -it alpine /bin/sh
+docker run -it pensu/busybox /bin/sh
+docker run -d -it ubuntu /bin/bash
 
+docker push sachin6174/xammp_installed:1.0
+docker push sachin6174/alpine_sh:1.0
+#delete all images
+docker rmi -f $(docker images -q)
 apt update 
 apt upgrade
 apt install wget
@@ -12,7 +19,7 @@ chmod +x xampp-linux-x64-8.1.6-0-installer.run
 chmod 777 /opt/lampp/htdocs
 apt install net-tools -y
 /etc/init.d/mysql stop
-/opt/lampp/lampp stop
+/opt/lampp/xampp stop
 /opt/lampp/lampp start
 /opt/lampp/lampp restart
 

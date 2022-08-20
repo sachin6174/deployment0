@@ -1,0 +1,13 @@
+ssh root@165.232.177.116
+adduser bunty
+usermod -aG sudo bunty (giving sudo access)
+ufw allow OpenSSH
+ufw enable (enabling firewall no access would be given no respond on othet then ssh )
+sudo su
+exit
+
+
+using nano command 
+ctrl x y enter (save and exit)
+ssh-keygen -t rsa  (making public private key)(on client)
+scp C:\Users\sachin\.ssh\id_rsa.pub sachio@165.232.177.116:~/.ssh/authorized_keys  (run on client)
